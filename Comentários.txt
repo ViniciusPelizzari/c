@@ -1,0 +1,4 @@
+Configuradas as ariáveis de ambiente - Twilio
+dia 02/08/2023 - 10:11
+
+dependencias google - validar telefone

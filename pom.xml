@@ -47,6 +47,18 @@
 			<version>8.35.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.5.3.Final</version> <!-- ou a versão mais recente disponível -->
+		</dependency>
+
+		<dependency>
+			<groupId>com.googlecode.libphonenumber</groupId>
+			<artifactId>libphonenumber</artifactId>
+			<version>8.12.26</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

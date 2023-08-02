@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="/static/css/codcss.css">
+    <link rel="stylesheet" href="/static/css/reset.css">
+    <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
+</head>
+<body>
+<h1>Formulário de Contato</h1>
+<form method="post" action="/enviarFormulario">
+    <!-- Campo: Nome -->
+    <div>
+        <label for="name" class="label_required">Nome:</label>
+        <input type="text" id="name" name="name" required />
+        <span class="hint">Vinícius P. S.</span>
+    </div>
+
+    <!-- Campo: Email -->
+    <div>
+        <label for="email" class="label_required">Email:</label>
+        <input type="email" id="email" name="email" required
+               title="Digite um endereço de e-mail válido." />
+               <!--placeholder="seuemail@domínio"-->
+        <span class="hint">seuemail@domínio</span>
+    </div>
+
+    <!-- Campo: Telefone -->
+    <div>
+        <label for="phoneNumber">Telefone:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required
+               pattern="^\+\d{13}$"
+               title="Digite um número de telefone válido no formato: +xxxxxxxxxxxxx" />
+        <span class="hint">+550091234</span>
+    </div>
+
+
+    <!-- Campo: Empresa -->
+    <div>
+        <label for="company">Empresa (opcional):</label>
+        <input type="text" id="company" name="company" />
+    </div>
+
+    <!-- Campo: Assunto -->
+    <div>
+        <label for="topic">Assunto (opcional):</label>
+        <input type="text" id="topic" name="topic" />
+    </div>
+
+    <!-- Campo: Mensagem -->
+    <div>
+        <label for="message">Mensagem (opcional):</label>
+        <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    </div>
+
+    <!-- Opção: Mensagem Automática ou Personalizada -->
+    <div>
+        <label>Mensagem:</label>
+        <input type="radio" id="mensagemAutomatica" name="mensagemAutomatica" value="true" checked />
+        <label for="mensagemAutomatica">Automática</label>
+        <input type="radio" id="mensagemPersonalizada" name="mensagemAutomatica" value="false" />
+        <label for="mensagemPersonalizada">Personalizada</label>
+    </div>
+
+    <!-- Opção: Enviar por Email ou por WhatsApp -->
+    <div>
+        <label>Enviar por:</label>
+        <input type="radio" id="mensagemPorEmail" name="mensagemPorEmail" value="true" checked />
+        <label for="mensagemPorEmail">Email</label>
+        <input type="radio" id="mensagemPorWhatsApp" name="mensagemPorEmail" value="false" />
+        <label for="mensagemPorWhatsApp">WhatsApp</label>
+    </div>
+
+    <!-- Botão Enviar -->
+    <button type="submit">Enviar</button>
+</form>
+
+<footer>
+    <div class="class_img_footer">
+        <img src="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.png" alt="Logo - Página perfil" class="img_footer">
+    </div>
+    <p class="copyright">&copy; Copyright Vinícius P. S. - Since 2023</p>
+    <p class="gloria">&#8224; Glória a Deus!</p>
+</footer>
+
+</body>
+</html>
