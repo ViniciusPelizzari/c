@@ -1,80 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>Formulário de Contato</title>
-    <link rel="stylesheet" href="/static/css/codcss.css">
-    <link rel="stylesheet" href="/static/css/reset.css">
+    <link th:href="@{/css/codcss.css}" rel="stylesheet" />
+    <link th:href="@{/css/reset.css}" rel="stylesheet" />
     <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
 </head>
-<body>
-<h1>Formulário de Contato</h1>
-<form method="post" action="/enviarFormulario">
-    <!-- Campo: Nome -->
-    <div>
-        <label for="name" class="label_required">Nome:</label>
-        <input type="text" id="name" name="name" required />
-        <span class="hint">Vinícius P. S.</span>
+<body class="body_formulario">
+<form th:object="${formulario}" th:action="@{/enviar-form}" method="post" class="formulario">
+    <h1 class="h1_formulario">Formulário de Contato</h1>
+    <div class="elementos">
+        <div><label for="name" class="label_required">Name:</label></div>
+        <div><span class="hint">Ex: Vinícius P. S.</span></div>
+        <div><input type="text" id="name" name="name" th:field="*{name}" required /></div>
     </div>
 
-    <!-- Campo: Email -->
-    <div>
-        <label for="email" class="label_required">Email:</label>
-        <input type="email" id="email" name="email" required
-               title="Digite um endereço de e-mail válido." />
-               <!--placeholder="seuemail@domínio"-->
-        <span class="hint">seuemail@domínio</span>
+    <div class="elementos">
+        <div><label for="email" class="label_required">Email:</label></div>
+        <div><span class="hint">Ex: seuemail@domínio</span></div>
+        <div><input type="email" id="email" name="email" th:field="*{email}" required
+                    title="Digite um endereço de e-mail válido." /></div>
     </div>
 
-    <!-- Campo: Telefone -->
-    <div>
-        <label for="phoneNumber">Telefone:</label>
-        <input type="text" id="phoneNumber" name="phoneNumber" required
-               pattern="^\+\d{13}$"
-               title="Digite um número de telefone válido no formato: +xxxxxxxxxxxxx" />
-        <span class="hint">+550091234</span>
+    <div class="elementos">
+        <div><label for="phoneNumber" class="label_required">WhatsApp - Telefone:</label></div>
+        <div><span class="hint">Ex: +55123451234</span></div>
+        <div><input type="text" id="phoneNumber" name="phoneNumber" th:field="*{phoneNumber}" required
+                   pattern="^\+\d{13}$"
+                   title="Digite um número de telefone válido no formato: +xxxxxxxxxxxxx" /></div>
     </div>
 
-
-    <!-- Campo: Empresa -->
-    <div>
-        <label for="company">Empresa (opcional):</label>
-        <input type="text" id="company" name="company" />
+    <div class="elementos">
+        <div><label for="company">Empresa (opcional):</label></div>
+        <div><input type="text" id="company" name="company" th:field="*{company}"/></div>
     </div>
 
-    <!-- Campo: Assunto -->
-    <div>
-        <label for="topic">Assunto (opcional):</label>
-        <input type="text" id="topic" name="topic" />
+    <div class="elementos">
+        <div><label for="topic">Assunto (opcional):</label></div>
+        <div><input type="text" id="topic" name="topic"  th:field="*{topic}"/></div>
+        <div></div>
     </div>
 
-    <!-- Campo: Mensagem -->
-    <div>
-        <label for="message">Mensagem (opcional):</label>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea>
+    <div class="elementos">
+        <div><label for="message">Mensagem (opcional):</label></div>
+        <div><textarea id="message" name="message" rows="4" cols="50" th:field="*{message}"></textarea></div>
     </div>
 
-    <!-- Opção: Mensagem Automática ou Personalizada -->
     <div>
-        <label>Mensagem:</label>
-        <input type="radio" id="mensagemAutomatica" name="mensagemAutomatica" value="true" checked />
-        <label for="mensagemAutomatica">Automática</label>
-        <input type="radio" id="mensagemPersonalizada" name="mensagemAutomatica" value="false" />
-        <label for="mensagemPersonalizada">Personalizada</label>
+        <div><label class="label_radio">Mensagem:</label></div>
+        <div><label class="label_radio" for="mensagemAutomatica">Automática</label>
+            <input class="input_radio" type="radio" id="mensagemAutomatica" name="mensagemAutomatica" th:checked="${formulario.automaticMessage}" th:value="true" />
+            <input class="input_radio" type="radio" id="mensagemPersonalizada" name="mensagemAutomatica" th:checked="${!formulario.automaticMessage}" th:value="false" />
+            <label class="label_radio" for="mensagemPersonalizada">Personalizada</label></div>
     </div>
 
-    <!-- Opção: Enviar por Email ou por WhatsApp -->
     <div>
-        <label>Enviar por:</label>
-        <input type="radio" id="mensagemPorEmail" name="mensagemPorEmail" value="true" checked />
-        <label for="mensagemPorEmail">Email</label>
-        <input type="radio" id="mensagemPorWhatsApp" name="mensagemPorEmail" value="false" />
-        <label for="mensagemPorWhatsApp">WhatsApp</label>
+        <div><label class="label_radio">Enviar por:</label></div>
+        <div><label class="label_radio" for="mensagemPorEmail">Email</label>
+            <input class="input_radio" type="radio" id="mensagemPorEmail" name="mensagemPorEmail" th:checked="${formulario.emailMessage}" th:value="true" />
+            <input class="input_radio" type="radio" id="mensagemPorWhatsApp" name="mensagemPorEmail" th:checked="${!formulario.emailMessage}" th:value="false" />
+            <label class="label_radio" for="mensagemPorWhatsApp">WhatsApp</label></div>
     </div>
 
-    <!-- Botão Enviar -->
-    <button type="submit">Enviar</button>
+    <button class="button_formulario" type="submit"><a href="/enviarForm" class="a_formulario">Enviar</a></button>
 </form>
 
 <footer>

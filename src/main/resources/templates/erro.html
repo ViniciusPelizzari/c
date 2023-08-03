@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Sucesso - Envio</title>
+    <title>Erro - Envio</title>
     <link th:href="@{/css/codcss.css}" rel="stylesheet" />
     <link th:href="@{/css/reset.css}" rel="stylesheet" />
     <!--<link rel="stylesheet" href="/static/css/codcss.css">
@@ -11,17 +11,19 @@
     <link rel="icon" href="https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico">
 </head>
 <body>
-<div class="body_erro_sucesso">
-    <div class="img_fosco">
-        <h1 class="h1_sucesso">Dados enviados com sucesso!</h1>
-
-        <main>
-            <div>
-                <button class="button_erro_sucesso"><a href="/form" class="a_erro_sucesso">Formulário</a></button>
-            </div>
-        </main>
+    <div class="body_erro_sucesso">
+        <div class="img_fosco">
+        <h1 class="h1_erro">Ooops! Algo deu errado.</h1>
+            <h2 class="n_erro">500</h2>
+            <p class="p_erro_en">Internal Server Error</p>
+            <p class="p_erro_pt">Erro do servidor interno</p>
+        <p class="p_erro">Lamentamos, mas ocorreu um erro no processamento do formulário.</p>
+        <p class="p_erro">Por favor, tente novamente mais tarde.</p>
+        </div>
+        <div>
+            <button class="button_erro_sucesso"><a href="/form" class="a_erro_sucesso">Formulário</a></button>
+        </div>
     </div>
-</div>
 
 <footer th:fragment="footer">
     <div class="class_img_footer">

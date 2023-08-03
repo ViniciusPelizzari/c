@@ -1,14 +1,217 @@
+.body_erro_sucesso{
+    background-image: url('https://raw.githubusercontent.com/ViniciusPelizzari/perfil_web/main/img/1escopi-removebg-preview.ico');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    max-width: 600px;
+    height: 75vh;
+    padding: 0;
+    color: #FFFFFF;
+    margin: 0 auto;
+}
+
+.img_fosco {
+    background-color: rgba(0, 0, 0, 0.88);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 75vh;
+}
+
+/*SUCESSO*/
+.h1_sucesso{
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 940px;
+    margin: 0 auto;
+    padding: 180px;
+    font-size: 100px;
+    text-shadow: 0 10px 10px #2A59F2;
+    color: #FFFFFF;
+}
+
+.h1_sucesso:hover{
+    text-shadow: 0 10px 10px #000000;
+}
+
+.button_erro_sucesso{
+    margin-top: 130px;
+    background: blue;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 20px 33px;
+    box-shadow: 2px 8px 8px #000000;
+    position: fixed;
+    bottom: 250px;
+    right: 40px;
+}
+
+.button_erro_sucesso:hover{
+    background: #FFFFFF;
+}
+
+.a_erro_sucesso{
+    text-decoration: none;
+    color: #FFFFFF;
+    text-shadow: 0 5px 5px #000000;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.a_erro_sucesso:hover{
+    color: #000000;
+    text-shadow: 0 1px 1px #FFFFFF;
+    font-weight: bold;
+}
+
+/*ERRO*/
+.h1_erro{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 33px;
+    margin: 30px;
+    text-shadow: 0 5px 5px #2A59F2;
+}
+
+.n_erro{
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 303px;
+    text-shadow: 0 10px 10px #DDDDDD;
+    color: blue;
+}
+
+.n_erro:hover{
+    cursor: pointer;
+    font-size: 333px;
+    text-shadow: 0 8px 8px #FFFFFF;
+}
+
+.p_erro_en{
+    font-weight: bold;
+    font-size: 18px;
+    text-shadow: 0 px 2px #000000;
+}
+
+.p_erro_pt{
+    font-weight: bold;
+    font-size: 14px;
+    text-shadow: 0 2px 2px #000000;
+    margin-bottom: 120px;
+}
+
+.p_erro{
+    font-weight: bold;
+    margin: 5px;
+}
+
+/*FORMULARIO*/
+.body_formulario{
+    width: 100%;
+    background: #000000;
+}
+
+.formulario{
+    width: 940px;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.h1_formulario{
+    font-size: 40px;
+    font-weight: bold;
+    color: blue;
+    text-transform: uppercase;
+    text-shadow: 0 1.5px 1.5px #FFFFFF;
+    margin: 20px;
+}
+
+.elementos{
+    margin-top: 20px;
+    font-size: 20px;
+    text-shadow: 0 5px 5px blue;
+}
+
 .label_required:after {
-  content:" *";
-  color: red;
+    content:" *";
+    color: red;
 }
 
 .hint {
-  font-size: 12px;
-  color: #999;
-  margin-left: 10px;
+    font-size: 12px;
+    color: #FFFFFF;
+    margin: 20px;
+    text-shadow: 0 1px 1px blue;
 }
 
+label{
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+input:not([type="radio"]), textarea{
+    border: 2px solid #ffffff;
+    width: 500px;
+    height: 30px;
+    padding-left: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px blue;
+    margin-top: 10px;
+}
+ textarea{
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 300px;
+    min-height: 100px;
+    margin-bottom: 20px;
+ }
+
+.label_radio{
+    font-size: 16px;
+    text-shadow: 0 3px 3px blue;
+}
+
+.input_radio{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.button_formulario{
+    margin: 10px 5px 80px;
+    background: blue;
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 33px;
+    box-shadow: 2px 8px 8px #000000;
+}
+
+.button_formulario:hover{
+    background: #FFFFFF;
+    color: blue;
+}
+
+.a_formulario{
+    text-decoration: none;
+    color: #FFFFFF;
+    text-shadow: 0 5px 5px #000000;
+    padding: 20px 40px;
+    cursor: pointer;
+}
+
+.a_formulario:hover{
+    color: blue;
+    text-shadow: 0 1px 1px #FFFFFF;
+    font-weight: bold;
+}
 
 /*FOOTER*/
 footer{
@@ -16,10 +219,11 @@ footer{
     background: #000000;
     padding: 28px;
     color: #FFFFFF;
+    height: 210px;
 }
 
 footer img{
-    width: 120px;
+    width: 140px;
     height: auto;
     margin-bottom: 15px;
 }
@@ -60,6 +264,7 @@ footer img{
 .gloria{
     font-size: 8px;
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .class_img_footer {
