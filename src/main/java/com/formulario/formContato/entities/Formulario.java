@@ -10,13 +10,13 @@ import javax.persistence.Entity;
 
 @Entity
 public class Formulario {
-    @NotBlank
+    //@NotBlank
     private String name;
-    @NotBlank
+    //@NotBlank
     @Email(message = "Por favor, digite um endereço de e-mail válido.")
     private String email;
 
-    @NotBlank
+    //@NotBlank
     @Size(min = 13, message = "Por favor, digite um número de telefone válido.")
     @Pattern(regexp = "^\\+\\d{13}$",
             message = "Por favor, digite um número de telefone válido no formato: +xxxxxxxxxxxxx")
@@ -66,12 +66,12 @@ public class Formulario {
 
     public void setPhoneNumber(String phoneNumber) {
         String cleanedPhoneNumber = phoneNumber.replaceAll("[^\\d]", "");
-        if (!cleanedPhoneNumber.startsWith("+")) {
+        /*if (!cleanedPhoneNumber.startsWith("+")) {
             throw new IllegalArgumentException("O número de telefone deve começar com '+'.");
-        }
-        if (cleanedPhoneNumber.length() != 14) {
+        }*/
+        /*if (cleanedPhoneNumber.length() != 14) {
             throw new IllegalArgumentException("O número de telefone deve ter 14 dígitos, incluindo o '+'.");
-        }
+        }*/
         this.phoneNumber = cleanedPhoneNumber;
     }
 

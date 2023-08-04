@@ -1,8 +1,5 @@
 package com.formulario.formContato.formularioDTO;
 
-import com.formulario.formContato.entities.Formulario;
-import org.springframework.beans.BeanUtils;
-
 public class FormularioDTO {
 
     private String name;
@@ -14,8 +11,19 @@ public class FormularioDTO {
     private Boolean automaticMessage;
     private Boolean emailMessage;
 
-    public FormularioDTO(Formulario entity){
-        BeanUtils.copyProperties(entity, this);
+    public FormularioDTO(){
+
+    }
+
+    public FormularioDTO(String name, String email, String phoneNumber, String company, String topic, String message, Boolean automaticMessage, Boolean emailMessage) {
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.company = company;
+        this.topic = topic;
+        this.message = message;
+        this.automaticMessage = automaticMessage;
+        this.emailMessage = emailMessage;
     }
 
     public String getName() {

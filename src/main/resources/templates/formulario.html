@@ -40,7 +40,6 @@
     <div class="elementos">
         <div><label for="topic">Assunto (opcional):</label></div>
         <div><input type="text" id="topic" name="topic"  th:field="*{topic}"/></div>
-        <div></div>
     </div>
 
     <div class="elementos">
@@ -52,7 +51,7 @@
         <div><label class="label_radio">Mensagem:</label></div>
         <div><label class="label_radio" for="mensagemAutomatica">Automática</label>
             <input class="input_radio" type="radio" id="mensagemAutomatica" name="mensagemAutomatica" th:checked="${formulario.automaticMessage}" th:value="true" />
-            <input class="input_radio" type="radio" id="mensagemPersonalizada" name="mensagemAutomatica" th:checked="${!formulario.automaticMessage}" th:value="false" />
+            <input class="input_radio" type="radio" id="mensagemPersonalizada" name="mensagemAutomatica" th:checked="${formulario.automaticMessage}" th:value="false" />
             <label class="label_radio" for="mensagemPersonalizada">Personalizada</label></div>
     </div>
 
@@ -60,11 +59,12 @@
         <div><label class="label_radio">Enviar por:</label></div>
         <div><label class="label_radio" for="mensagemPorEmail">Email</label>
             <input class="input_radio" type="radio" id="mensagemPorEmail" name="mensagemPorEmail" th:checked="${formulario.emailMessage}" th:value="true" />
-            <input class="input_radio" type="radio" id="mensagemPorWhatsApp" name="mensagemPorEmail" th:checked="${!formulario.emailMessage}" th:value="false" />
+            <input class="input_radio" type="radio" id="mensagemPorWhatsApp" name="mensagemPorEmail" th:checked="${formulario.emailMessage}" th:value="false" />
             <label class="label_radio" for="mensagemPorWhatsApp">WhatsApp</label></div>
     </div>
 
-    <button class="button_formulario" type="submit"><a href="/enviarForm" class="a_formulario">Enviar</a></button>
+    <button class="button_formulario" type="submit">Enviar</button>
+
 </form>
 
 <footer>

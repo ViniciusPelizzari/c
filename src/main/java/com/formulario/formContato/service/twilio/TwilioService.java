@@ -1,4 +1,4 @@
-package com.formulario.formContato.service.twilio;
+/*package com.formulario.formContato.service.twilio;
 
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
@@ -35,5 +35,5 @@ public class TwilioService {
             e.printStackTrace();
         }
     }
-}
+}*/
 

@@ -6,11 +6,7 @@ import com.formulario.formContato.formularioDTO.FormularioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class FormularioController {
@@ -19,7 +15,7 @@ public class FormularioController {
     private FormularioService formularioService;
 
     /**
-     * Exibe o formulário para cadastro de uma nova pessoa.
+     * Exibe o formulário para o envio dos dados.
      *
      * @param model É utilizado para enviar atributos para a page.
      * @return A página do formulário.
@@ -84,22 +80,23 @@ public class FormularioController {
                     formularioService.enviarEmail(formulario.getEmail(), autoTopicEmail, autoMessageEmail);
                     formularioService.sendMessageCompany(formulario);
                 } else {
-                    formularioService.enviarMensagemWhatsapp(formulario.getPhoneNumber(), autoMessageWhatsApp);
+                    //formularioService.enviarMensagemWhatsapp(formulario.getPhoneNumber(), autoMessageWhatsApp);
                     formularioService.sendMessageCompany(formulario);
                 }
             } else {
                 formularioService.sendMessageCompany(formulario);
             }
         } catch (Exception exception){
-            return "redirect:/erro";
+            return exception.getMessage();
+            //return "redirect:/erro";
         }
         return "redirect:/sucesso";
     }
 
     /**
-     * Exibe a página de sucesso.
+     * Exibe a página de erro.
      *
-     * @return A página de sucesso.
+     * @return A página de erro.
      */
     @GetMapping("/sucesso")
     public String paginaSucesso() {
